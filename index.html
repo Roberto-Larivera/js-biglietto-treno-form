@@ -5,10 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolo del prezzo del biglietto del treno</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
-
-    <label for="nome-passeggero">
+    <div class="container">
+        
+        <main>
+            <h1>
+                Calcola il prezzo del tuo biglietto
+            </h1>
+    
+            <div class="box-card">
+                <form action="">
+                    <div class="ms_d-flex ms_j-evenly ms_align-it-center ms_mb-50">
+                        <div class="ms_d-flex ms_f-dir-col ms_align-it-center">
+                            <label class="block" for="nome-passeggero">
+                                Nome Cognome
+                            </label>
+                            <input type="text" id="nome-passeggero" placeholder="Nome e Cognome">
+                        </div>
+                    
+                        <div class="ms_d-flex ms_f-dir-col ms_align-it-center">
+                            <label class="block" for="distanza-km">
+                                Km da percorrere
+                            </label>
+                            <input type="number" id="distanza-km" placeholder="Km da percorrere">
+                        </div>
+                    
+                        <div class="ms_d-flex ms_f-dir-col ms_align-it-center">
+                            <label class="block" for="eta-passeggero">
+                                Fascia d'età
+                            </label>
+                            <select id="eta-passeggero">
+                                <option value="minorenne">Meno di 18 anni</option>
+                                <option value="maggiorenne">Più di 18 anni</option>
+                                <option value="over">Più di 65 anni</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="ms_d-flex ms_j-evenly ms_align-it-center">
+                        <button id="submit-genera">Genera</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    <!-- <label for="nome-passeggero">
         Nome del passeggero
     </label>
     <input type="text" id="nome-passeggero">
@@ -27,7 +72,7 @@
         <option value="over">Più di 65 anni</option>
     </select>
 
-    <button id="submit-genera">Genera</button>
+    <button id="submit-genera">Genera</button> -->
 
 
 
