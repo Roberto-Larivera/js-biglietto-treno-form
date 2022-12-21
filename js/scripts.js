@@ -74,6 +74,14 @@ submitGenera.addEventListener('click',
                     document.getElementById('out-offerta').innerHTML = 'Biglietto Standard';
 
                 }
+
+                const outCarrozza = (Math.floor(Math.random() * 10)+1);
+                console.log(outCarrozza);
+                document.getElementById('out-carrozza').innerHTML = outCarrozza;
+
+
+
+
             }
             else{
                 console.log('I dati inseriti sono errati');
