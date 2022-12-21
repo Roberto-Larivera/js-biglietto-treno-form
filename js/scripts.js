@@ -10,7 +10,9 @@ const submitGenera = document.getElementById('submit-genera');
 
 
 
-
+function prevent(e){        //serve per utilizzare il form con un butoon di type submit
+    e.preventDefault();
+  }
 
 submitGenera.addEventListener('click',
     function(){
@@ -55,7 +57,7 @@ submitGenera.addEventListener('click',
                 prezzoBiglietto = prezzoBiglietto.toFixed(2);
                 messaggio = messaggio + prezzoBiglietto + ' €';
                 console.log(messaggio);  //conferma lettura dati
-                alert(messaggio)  //avviso utente
+                //alert(messaggio)  //avviso utente
 
                 document.getElementById('out-nome-passeggero').innerHTML = nomePasseggero.value;
                 
