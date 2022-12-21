@@ -16,26 +16,26 @@ submitGenera.addEventListener('click',
     function(){
         let valoreKm = parseInt(distanzaKm.value);
         
-        if (isNaN(valoreKm) == true){
+        if (isNaN(valoreKm) == true || etaPasseggero.value == 'disabled'){
             console.log('I dati inseriti sono errati er:101');
-            alert('I dati inseriti sono errati er:101');
+            alert('I dati inseriti sono errati, inserite dati validi');
 
         }
         else{
             console.log('Fin qui tutto ok');
 
             
-            console.log("Il nome dell'utente è:", nomePasseggero.value, isNaN(nomePasseggero.value));  
-            console.log("I chilometri inseriti dall'utente sono:", valoreKm, isNaN(valoreKm));
-            console.log("L'età del passeggero è:", etaPasseggero.value);
-
-            let prezzoBiglietto = valoreKm * prezzoKm;    //variante prezzo biglietto (calcolo)
-            console.log('Prezzo del biglietto:',prezzoBiglietto);
-            prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
-            console.log(`Prezzo biglietto intero ${prezzoBiglietto} €`); //conferma lettura dati
-
-            let messaggio;
             if (etaPasseggero.value == 'minorenne' || etaPasseggero.value == "maggiorenne" || etaPasseggero.value == "over"){
+                console.log("Il nome dell'utente è:", nomePasseggero.value, isNaN(nomePasseggero.value));  
+                console.log("I chilometri inseriti dall'utente sono:", valoreKm, isNaN(valoreKm));
+                console.log("L'età del passeggero è:", etaPasseggero.value);
+    
+                let prezzoBiglietto = valoreKm * prezzoKm;    //variante prezzo biglietto (calcolo)
+                console.log('Prezzo del biglietto:',prezzoBiglietto);
+                prezzoBiglietto = prezzoBiglietto.toFixed(2);   //trasformazione in due decimali
+                console.log(`Prezzo biglietto intero ${prezzoBiglietto} €`); //conferma lettura dati
+    
+                let messaggio;
                 if (etaPasseggero.value == 'minorenne'){
                     console.log("Il passeggero è minorenne");   //conferma avvenuta variante
                     prezzoBiglietto = (prezzoBiglietto * 0.8);    //calcolo sconto su variante
@@ -88,11 +88,12 @@ submitGenera.addEventListener('click',
                 document.getElementById('out-codice-cp').innerHTML = outCodiceCp;
                 console.log('outCodiceCp', outCodiceCp, typeof outCodiceCp);
 
-
+                //document.getElementById('out-prezzo-biglietto').innerHTML += prezzoBiglietto;   //non funziona se non ricarichi la pagina
+                document.getElementById('out-prezzo-biglietto').innerHTML = `${prezzoBiglietto} €` ;
             }
             else{
-                console.log('I dati inseriti sono errati');
-                alert('I dati inseriti sono errati');
+                console.log('I dati inseriti sono incompleti er:102');
+                alert('I dati inseriti sono incompleti, selezionate una fascia d\'età');
             }
             // else if (etaPasseggero.value == 'disabled'){
                 

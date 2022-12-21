@@ -20,7 +20,7 @@
     
             <div class="card">
                 <div class="card-body">
-                    <!-- <form action=""> -->
+                    <form action="" method="get">
                         <div class="row justify-content-evenly">
                             <div class="col-3 d-flex flex-column ">
                                 <label for="nome-passeggero" class="form-label">
@@ -38,7 +38,7 @@
                                 <label for="eta-passeggero" class="form-label">
                                     Età del passeggero
                                 </label>
-                                <select id="eta-passeggero" class="form-select" required>
+                                <select id="eta-passeggero" class="form-select" required placeholder="Inserisci i km da percorrere">
                                     <option disabled selected value="disabled">Scegli fascia d'età</option>
                                     <option value="minorenne">Meno di 18 anni</option>
                                     <option value="maggiorenne">Più di 18 anni</option>
@@ -47,11 +47,13 @@
                             </div>
                             <div class="row">
                                 <div class="col">
+                                    <input type="submit" class="btn btn-success" value="Sottometti sto form">
                                     <button type="submit" class="btn btn-success" id="submit-genera">Genera</button>
+                                    <button type="reset" class="btn" id="">Cancella</button>
                                 </div>
                             </div>
                         </div>
-                    <!-- </form> -->
+                    </form>
                 </div>
 
             </div>
@@ -59,7 +61,7 @@
             <h2>
                 Il tuo biglietto
             </h2>
-            <div class="card">
+            <div class="card p-2">
                 <table>
                     <thead>
                         <tr>
