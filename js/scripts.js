@@ -17,8 +17,8 @@ submitGenera.addEventListener('click',
         let valoreKm = parseInt(distanzaKm.value);
         
         if (isNaN(valoreKm) == true){
-            console.log('I dati inseriti sono errati');
-            alert('I dati inseriti sono errati');
+            console.log('I dati inseriti sono errati er:101');
+            alert('I dati inseriti sono errati er:101');
 
         }
         else{
@@ -35,7 +35,7 @@ submitGenera.addEventListener('click',
             console.log(`Prezzo biglietto intero ${prezzoBiglietto} €`); //conferma lettura dati
 
             let messaggio;
-            if (etaPasseggero.value == 'minorenne' || etaPasseggero.value == "over" || etaPasseggero.value == "over"){
+            if (etaPasseggero.value == 'minorenne' || etaPasseggero.value == "maggiorenne" || etaPasseggero.value == "over"){
                 if (etaPasseggero.value == 'minorenne'){
                     console.log("Il passeggero è minorenne");   //conferma avvenuta variante
                     prezzoBiglietto = (prezzoBiglietto * 0.8);    //calcolo sconto su variante
@@ -56,6 +56,24 @@ submitGenera.addEventListener('click',
                 messaggio = messaggio + prezzoBiglietto + ' €';
                 console.log(messaggio);  //conferma lettura dati
                 alert(messaggio)  //avviso utente
+
+                document.getElementById('out-nome-passeggero').innerHTML = nomePasseggero.value;
+                
+                let fasciaOfferta;
+                if (etaPasseggero.value == 'minorenne'){
+                    fasciaOfferta = etaPasseggero.value
+                    document.getElementById('out-offerta').innerHTML = 'Biglietto ridotto -20%';
+                }
+                else if(etaPasseggero.value == "over"){
+                    fasciaOfferta = etaPasseggero.value
+                    document.getElementById('out-offerta').innerHTML = 'Biglietto ridotto -40%';
+
+                }
+                else if(etaPasseggero.value == 'maggiorenne'){
+                    fasciaOfferta = etaPasseggero.value
+                    document.getElementById('out-offerta').innerHTML = 'Biglietto Standard';
+
+                }
             }
             else{
                 console.log('I dati inseriti sono errati');
