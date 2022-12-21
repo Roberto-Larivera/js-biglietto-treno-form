@@ -35,26 +35,39 @@ submitGenera.addEventListener('click',
             console.log(`Prezzo biglietto intero ${prezzoBiglietto} €`); //conferma lettura dati
 
             let messaggio;
-            if (etaPasseggero.value == 'minorenne'){
-                console.log("Il passeggero è minorenne");   //conferma avvenuta variante
-                prezzoBiglietto = (prezzoBiglietto * 0.8);    //calcolo sconto su variante
-                messaggio = `Prezzo biglietto scontato del 20% `;
+            if (etaPasseggero.value == 'minorenne' || etaPasseggero.value == "over" || etaPasseggero.value == "over"){
+                if (etaPasseggero.value == 'minorenne'){
+                    console.log("Il passeggero è minorenne");   //conferma avvenuta variante
+                    prezzoBiglietto = (prezzoBiglietto * 0.8);    //calcolo sconto su variante
+                    messaggio = `Prezzo biglietto scontato del 20% `;
+                }
+                else if (etaPasseggero.value == "over"){
+                    console.log("Il passeggero è over 65"); //conferma avvenuta variante
+                    prezzoBiglietto = (prezzoBiglietto * 0.6);    //calcolo sconto su variante
+                    messaggio = `Prezzo biglietto scontato del 40% `;
+                }
+                else if (etaPasseggero.value == 'maggiorenne'){
+                    console.log(prezzoBiglietto);
+                    prezzoBiglietto= parseInt(prezzoBiglietto)
+                    messaggio = `Prezzo biglietto è di `;
+                    console.log('sei maggiorenne')
+                }
+                prezzoBiglietto = prezzoBiglietto.toFixed(2);
+                messaggio = messaggio + prezzoBiglietto + ' €';
+                console.log(messaggio);  //conferma lettura dati
+                alert(messaggio)  //avviso utente
             }
-            else if (etaPasseggero.value == "over"){
-                console.log("Il passeggero è over 65"); //conferma avvenuta variante
-                prezzoBiglietto = (prezzoBiglietto * 0.6);    //calcolo sconto su variante
-                messaggio = `Prezzo biglietto scontato del 40% `;
+            else{
+                console.log('I dati inseriti sono errati');
+                alert('I dati inseriti sono errati');
             }
-            else if (etaPasseggero.value == 'maggiorenne'){
-                console.log(prezzoBiglietto);
-                prezzoBiglietto= parseInt(prezzoBiglietto)
-                messaggio = `Prezzo biglietto è di `;
-                console.log('sei maggiorenne')
-            }
-            prezzoBiglietto = prezzoBiglietto.toFixed(2);
-            messaggio = messaggio + prezzoBiglietto + ' €';
-            console.log(messaggio);  //conferma lettura dati
-            alert(messaggio)  //avviso utente
+            // else if (etaPasseggero.value == 'disabled'){
+                
+            // }
+            // prezzoBiglietto = prezzoBiglietto.toFixed(2);
+            // messaggio = messaggio + prezzoBiglietto + ' €';
+            // console.log(messaggio);  //conferma lettura dati
+            // alert(messaggio)  //avviso utente
 
         }
     }
