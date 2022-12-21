@@ -76,10 +76,17 @@ submitGenera.addEventListener('click',
                 }
 
                 const outCarrozza = (Math.floor(Math.random() * 10)+1);
-                console.log(outCarrozza);
+                console.log('outCarrozza', outCarrozza, typeof outCarrozza);
                 document.getElementById('out-carrozza').innerHTML = outCarrozza;
 
-
+                function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+                }
+                const outCodiceCp = getRandomInt(90000,100000);
+                document.getElementById('out-codice-cp').innerHTML = outCodiceCp;
+                console.log('outCodiceCp', outCodiceCp, typeof outCodiceCp);
 
 
             }
