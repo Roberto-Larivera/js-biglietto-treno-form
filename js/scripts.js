@@ -119,7 +119,8 @@ submitGenera.addEventListener('click',
         }
     }
     
-)
+);
+
 empity.addEventListener('click',
                             
             function(){
@@ -135,38 +136,24 @@ empity.addEventListener('click',
     
 );
 
+            // *****!!!!! non funziona !!!! chiedere aiuto per questo
+// const input = distanzaKm + etaPasseggero + nomePasseggero;
+// console.log('input',input,typeof input);
 
+// input.addEventListener('click',
 
-
-
-
-
-
-//non funziona,!!!! quando i campi sono vuoti il button empity resta disabled
-// distanzaKm.addEventListener('input',
 
 //     function(){
-        
-//         if(distanzaKm.value = ''|| nomePasseggero.value == ''||etaPasseggero.value == 'disabled'){
-//             console.log('no')
-    
+//         if(distanzaKm.value == "" || nomePasseggero.value == "" ||etaPasseggero.value == "disabled"){
+//             console.log('nono');
 //         }
 //         else{
 //             console.log('si')
+//             distanzaKm.value = '';
+//             nomePasseggero.value = '';
+//             etaPasseggero.value = 'disabled';
+//             card.className = "card p-5 d-none";
+//             cardText.className = "d-none";
 //         }
-//         empity.addEventListener('click',
-                            
-//             function(){
-    
-//                 distanzaKm.value = '';
-//                 nomePasseggero.value = '';
-//                 etaPasseggero.value = 'disabled';
-//                 card.className="card p-5 d-none";
-//                 cardText.className="d-none";
-    
-    
-//             }
-    
-//         );
-//     }
+//     }  
 // );
