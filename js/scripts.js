@@ -6,7 +6,12 @@ let distanzaKm = document.getElementById('distanza-km');
 let etaPasseggero = document.getElementById('eta-passeggero');
 let nomePasseggero = document.getElementById('nome-passeggero');
 const submitGenera = document.getElementById('submit-genera');
+const empity = document.getElementById('empity');
 
+
+
+const card = document.getElementById('card-biglietto');
+const cardText = document.getElementById('card-text');
 
 
 
@@ -18,10 +23,9 @@ submitGenera.addEventListener('click',
     function(){
         let valoreKm = parseInt(distanzaKm.value);
         
-        if (isNaN(valoreKm) == true || etaPasseggero.value == 'disabled'){
+        if (isNaN(valoreKm) == true || etaPasseggero.value == 'disabled' || valoreKm >= 501 || valoreKm < 30){
             console.log('I dati inseriti sono errati er:101');
             alert('I dati inseriti sono errati, inserite dati validi');
-
         }
         else{
             console.log('Fin qui tutto ok');
@@ -104,7 +108,65 @@ submitGenera.addEventListener('click',
             // messaggio = messaggio + prezzoBiglietto + ' €';
             // console.log(messaggio);  //conferma lettura dati
             // alert(messaggio)  //avviso utente
-
+            
+            //card.classList.add('d-flex'): //con !important non funziona
+            card.className="card p-5 d-flex";
+            
+            //card.classList.add('d-flex'): //con !important non funziona
+            cardText.className="d-block";
+            
+            
         }
     }
+    
 )
+empity.addEventListener('click',
+                            
+            function(){
+    
+                distanzaKm.value = '';
+                nomePasseggero.value = '';
+                etaPasseggero.value = 'disabled';
+                card.className="card p-5 d-none";
+                cardText.className="d-none";
+    
+    
+            }
+    
+);
+
+
+
+
+
+
+
+
+//non funziona,!!!! quando i campi sono vuoti il button empity resta disabled
+// distanzaKm.addEventListener('input',
+
+//     function(){
+        
+//         if(distanzaKm.value = ''|| nomePasseggero.value == ''||etaPasseggero.value == 'disabled'){
+//             console.log('no')
+    
+//         }
+//         else{
+//             console.log('si')
+//         }
+//         empity.addEventListener('click',
+                            
+//             function(){
+    
+//                 distanzaKm.value = '';
+//                 nomePasseggero.value = '';
+//                 etaPasseggero.value = 'disabled';
+//                 card.className="card p-5 d-none";
+//                 cardText.className="d-none";
+    
+    
+//             }
+    
+//         );
+//     }
+// );

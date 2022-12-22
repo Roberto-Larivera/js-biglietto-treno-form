@@ -6,129 +6,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcolo del prezzo del biglietto del treno</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
-    <div class="container">
+    <main class="p-3">
         
-        <main>
-            <h1>
-                Calcola il prezzo del tuo biglietto
-            </h1>
-    
-            <div class="card">
-                <div class="card-body">
-                    <form action="" method="GET" onsubmit="prevent(event)">
-                        <div class="row justify-content-evenly">
-                            <div class="col-3 d-flex flex-column ">
-                                <label for="nome-passeggero" class="form-label">
-                                    Nome del passeggero
-                                </label>
-                                <input type="text" id="nome-passeggero" class="form-control" required>
-                            </div>
-                            <div class="col-3">
-                                <label for="distanza-km" class="form-label">
-                                    Chilometri da percorrere
-                                </label>
-                                <input type="number" id="distanza-km" placeholder="Inserisci i km da percorrere" class="form-control" required>
-                            </div>
-                            <div class="col-3">
-                                <label for="eta-passeggero" class="form-label">
-                                    Età del passeggero
-                                </label>
-                                <select id="eta-passeggero" class="form-select" required placeholder="Inserisci i km da percorrere">
-                                    <option disabled selected value="disabled">Scegli fascia d'età</option>
-                                    <option value="minorenne">Meno di 18 anni</option>
-                                    <option value="maggiorenne">Più di 18 anni</option>
-                                    <option value="over">Più di 65 anni</option>
-                                </select>
-                            </div>
+        <div class="container">
+            
+            <main class="p-3">
+                <h1>
+                    Calcola il prezzo del tuo biglietto
+                </h1>
+        
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <form action="" method="GET" onsubmit="prevent(event)">
                             <div class="row">
-                                <div class="col">
-                                    <!-- <input type="submit" class="btn btn-success" value="Sottometti sto form"> --> 
-                                    <button type="submit" class="btn btn-success" id="submit-genera">Genera</button>    <!--     funziona con la funzione js apposita -->
-                                    <!-- <button type="button" class="btn btn-success" id="submit-genera">Genera</button> --> <!--     funziona senza la funzione js apposita -->
-                                    <button type="reset" class="btn" id="">Cancella</button>
+                                <div class="col-12 mb-3">
+                                    <div class="row justify-content-evenly">
+
+                                        <div class="col-3 d-flex flex-column ">
+                                            <label for="nome-passeggero" class="form-label">
+                                                Nome del passeggero
+                                            </label>
+                                            <input type="text" id="nome-passeggero" class="form-control" placeholder="Nome e Cognome" required>
+                                        </div>
+                                        <div class="col-3">
+                                            <label for="distanza-km" class="form-label">
+                                                Chilometri da percorrere
+                                            </label>
+                                            <input type="number" id="distanza-km" placeholder="Inserisci i km" class="form-control" required>
+                                        </div>
+                                        <div class="col-3">
+                                            <label for="eta-passeggero" class="form-label">
+                                                Età del passeggero
+                                            </label>
+                                            <select id="eta-passeggero" class="form-select">
+                                                <option disabled selected value="disabled">Scegli fascia d'età</option>
+                                                <option value="minorenne">Meno di 18 anni</option>
+                                                <option value="maggiorenne">Più di 18 anni</option>
+                                                <option value="over">Più di 65 anni</option>
+                                            </select>
+                                        </div>
+    
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col d-flex justify-content-center">
+                                            <!-- <input type="submit" class="btn btn-success" value="Sottometti sto form"> --> 
+                                            <button type="submit" class="btn btn-outline-success me-1" id="submit-genera">Genera</button>    <!--     funziona con la funzione js apposita -->
+                                            <!-- <button type="button" class="btn btn-success" id="submit-genera">Genera</button> --> <!--     funziona senza la funzione js apposita -->
+                                            <button type="button" class="btn btn-outline-danger ms-1" id="empity">Cancella</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+    
                 </div>
-
-            </div>
-
-            <h2>
-                Il tuo biglietto
-            </h2>
-            <div class="card p-2">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                Nome Passeggero
-                            </th>
-                            <th>
-                                Offerta
-                            </th>
-                            <th>
-                                Carozza
-                            </th>
-                            <th>
-                                Codice cp
-                            </th>
-                            <th>
-                                Costo biglietto
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td id="out-nome-passeggero">
-
-                            </td>
-                            <td id="out-offerta">
-                                
-                            </td>
-                            <td id="out-carrozza">
-                                
-                            </td>
-                            <td id="out-codice-cp">
-                                
-                            </td>
-                            <td id="out-prezzo-biglietto">
-                                
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </div>
     
-    <!-- <div class="disable">
-        <label for="nome-passeggero">
-            Nome del passeggero
-        </label>
-        <input type="text" id="nome-passeggero">
+                <h2 id="card-text" class="d-none">
+                    Il tuo biglietto
+                </h2>
+                <div id="card-biglietto" class="card p-5 d-none">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="w-50">
+                                    Nome Passeggero
+                                </th>
+                                <th>
+                                    Offerta
+                                </th>
+                                <th>
+                                    Carozza
+                                </th>
+                                <th>
+                                    Codice cp
+                                </th>
+                                <th>
+                                    Costo biglietto
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="out-nome-passeggero">
     
-        <label for="distanza-km">
-            Chilometri da percorrere
-        </label>
-        <input type="number" id="distanza-km" placeholder="Inserisci i km da percorrere">
-    
-        <label for="eta-passeggero">
-            Età del passeggero
-        </label>
-        <select id="eta-passeggero">
-            <option value="minorenne">Meno di 18 anni</option>
-            <option value="maggiorenne">Più di 18 anni</option>
-            <option value="over">Più di 65 anni</option>
-        </select>
-    
-        <button id="submit-genera">Genera</button>
-    </div> -->
+                                </td>
+                                <td id="out-offerta">
+                                    
+                                </td>
+                                <td id="out-carrozza">
+                                    
+                                </td>
+                                <td id="out-codice-cp">
+                                    
+                                </td>
+                                <td id="out-prezzo-biglietto">
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </main>
 
 
 
