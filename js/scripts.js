@@ -7,6 +7,7 @@ let etaPasseggero = document.getElementById('eta-passeggero');
 let nomePasseggero = document.getElementById('nome-passeggero');
 const submitGenera = document.getElementById('submit-genera');
 const empity = document.getElementById('empity');
+console.log(nomePasseggero.value)
 
 
 
@@ -123,37 +124,16 @@ submitGenera.addEventListener('click',
 
 empity.addEventListener('click',
                             
-            function(){
-    
-                distanzaKm.value = '';
-                nomePasseggero.value = '';
-                etaPasseggero.value = 'disabled';
-                card.className="card p-5 d-none";
-                cardText.className="d-none";
-    
-    
-            }
+    function(){
+
+        distanzaKm.value = '';
+        nomePasseggero.value = '';
+        etaPasseggero.value = 'disabled';
+        card.className="card p-5 d-none";
+        cardText.className="d-none";
+
+
+    }
     
 );
 
-            // *****!!!!! non funziona !!!! chiedere aiuto per questo
-// const input = distanzaKm + etaPasseggero + nomePasseggero;
-// console.log('input',input,typeof input);
-
-// input.addEventListener('click',
-
-
-//     function(){
-//         if(distanzaKm.value == "" || nomePasseggero.value == "" ||etaPasseggero.value == "disabled"){
-//             console.log('nono');
-//         }
-//         else{
-//             console.log('si')
-//             distanzaKm.value = '';
-//             nomePasseggero.value = '';
-//             etaPasseggero.value = 'disabled';
-//             card.className = "card p-5 d-none";
-//             cardText.className = "d-none";
-//         }
-//     }  
-// );
